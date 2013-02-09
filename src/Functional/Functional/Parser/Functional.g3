@@ -1,0 +1,72 @@
+﻿grammar Functional;
+
+options {
+    language=CSharp3;
+    TokenLabelType=CommonToken;
+    output=AST;
+    ASTLabelType=CommonTree;
+}
+
+tokens {
+    // define pseudo-operations
+    FUNC;
+    CALL;
+}
+
+@lexer::namespace{Functional.Parser}
+@parser::namespace{Functional.Parser}
+
+
+// START:stat
+public
+prog: ( stat )*
+    ;
+
+stat:   expr NEWLINE                    -> expr
+    |   ID '=' expr NEWLINE             -> ^('=' ID expr)
+    |   func NEWLINE                    -> func
+    |   NEWLINE                         -> // ignore
+    ;
+
+func:   ID  '(' formalPar ')' '=' expr  -> ^(FUNC ID formalPar expr)
+    ;
+	finally {
+		functionDefinitions.Add($func.tree);
+	}
+
+formalPar
+    :   ID
+	|   INT
+	;
+
+// END:stat
+
+// START:expr
+expr:   multExpr (('+'^|'-'^) multExpr)*
+    ;
+
+multExpr
+    :   atom (('*'|'/'|'%')^ atom)*
+    ;
+
+atom:   INT
+    |   ID
+    |   '(' expr ')'    -> expr
+    |   ID '(' expr ')' -> ^(CALL ID expr)
+    ;
+// END:expr
+
+// START:tokens
+ID  :   ('a'..'z'|'A'..'Z')+
+	;
+
+INT :   '0'..'9'+
+    ;
+
+NEWLINE
+    :	'\r'? '\n'
+    ;
+
+WS  :   (' '|'\t')+ { Skip(); }
+    ;
+// END:tokens

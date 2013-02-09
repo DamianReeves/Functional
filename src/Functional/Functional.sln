@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Functional", "Functional\Functional.csproj", "{259D7C6D-3F75-4B16-826D-86D8E38C3646}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Functional.Console", "Functional.Console\Functional.Console.csproj", "{C26A2134-A336-4446-A924-2A7CD6FBE22F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Functional.Test", "Functional.Test\Functional.Test.csproj", "{50167668-0970-46CD-B6EF-293D7D10A62D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{25D04218-85ED-4E01-8A31-0292508D9A3D}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{259D7C6D-3F75-4B16-826D-86D8E38C3646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{259D7C6D-3F75-4B16-826D-86D8E38C3646}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{259D7C6D-3F75-4B16-826D-86D8E38C3646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{259D7C6D-3F75-4B16-826D-86D8E38C3646}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C26A2134-A336-4446-A924-2A7CD6FBE22F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C26A2134-A336-4446-A924-2A7CD6FBE22F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C26A2134-A336-4446-A924-2A7CD6FBE22F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C26A2134-A336-4446-A924-2A7CD6FBE22F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50167668-0970-46CD-B6EF-293D7D10A62D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50167668-0970-46CD-B6EF-293D7D10A62D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50167668-0970-46CD-B6EF-293D7D10A62D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50167668-0970-46CD-B6EF-293D7D10A62D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

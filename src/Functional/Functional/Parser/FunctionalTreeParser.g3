@@ -1,0 +1,52 @@
+﻿tree grammar FunctionalTreeParser;
+
+options {
+	tokenVocab=Functional;
+    language=CSharp3;
+    ASTLabelType=CommonTree;
+}
+
+@namespace{Functional.Parser}
+@header {
+using System;
+using System.Numerics;
+}
+
+// START:rules
+public
+prog:   stat*
+    ;
+
+stat:   expr                       { string result = $expr.value.ToString();
+                                     Console.WriteLine($expr.value + " (about " + result[0] + "*10^" + (result.Length-1) + ")");
+                                   }
+    |   ^('=' ID expr)             { this.globalMemory[$ID.text] = $expr.value; }
+    |   ^(FUNC .+)	               // ignore FUNCs - we added them to functionDefinitions already in parser.
+    ;
+
+expr returns [BigInteger value]
+    :   ^('+' a=expr b=expr)       { $value = $a.value + $b.value; }
+    |   ^('-' a=expr b=expr)       { $value = $a.value - $b.value; }
+    |   ^('*' a=expr b=expr)       { $value = $a.value * $b.value; }
+    |   ^('/' a=expr b=expr)       { $value = $a.value / $b.value; }
+    |   ^('%' a=expr b=expr)       { $value = BigInteger.Remainder($a.value, $b.value); }
+    |   ID                         { $value = this.GetValue($ID.text); }
+    |   INT                        { $value = BigInteger.Parse($INT.text); }
+    |   call                       { $value = $call.value; }
+    ;
+
+call returns [BigInteger value]
+    :   ^(CALL ID expr)            { BigInteger p = $expr.value;
+                                     var funcRoot = this.FindFunction($ID.text, p);
+                                     if (funcRoot == null) {
+                                         System.Console.Error.WriteLine("No match found for " + $ID.text + "(" + p + ")");
+                                     } else {
+                                         // Here we set up the local evaluator to run over the
+                                         // function definition with the parameter value.
+                                         // This re-reads a sub-AST of our input AST!
+                                         var e = new FunctionalTreeParser(funcRoot, functionDefinitions, globalMemory, p);
+                                         $value = e.expr();
+                                     }
+                                   }
+    ;
+// END:rules
