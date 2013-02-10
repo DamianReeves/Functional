@@ -1,4 +1,4 @@
-﻿namespace Functional.Parser 
+﻿namespace Functional.Parsing
 {
     using System;
     using System.Collections.Generic;
@@ -9,7 +9,7 @@
     public partial class FunctionalTreeParser
     {
         private readonly IDictionary<string, BigInteger> localMemory = new Dictionary<string, BigInteger>();
-        private IDictionary<string, BigInteger> globalMemory = new Dictionary<string, BigInteger>();
+        private readonly IDictionary<string, BigInteger> globalMemory = new Dictionary<string, BigInteger>();
         private IList<CommonTree> functionDefinitions;
 
         public FunctionalTreeParser(ITreeNodeStream nodes, IList<CommonTree> functionDefinitions) : base(nodes)
@@ -35,7 +35,7 @@
             : this(// Expected tree for function: ^(FUNC ID ( INT | ID ) expr)
                 new CommonTreeNodeStream(function.GetChild(2)), functionDefinitions)
         {
-            this.globalMemory = globalMemory;
+            //this.globalMemory = globalMemory;
             this.localMemory.Add(function.GetChild(1).Text, paramValue);
         }
 
@@ -48,7 +48,7 @@
                 return value;
             }
 
-            if (this.globalMemory.TryGetValue(name, out value))
+            if (globalMemory.TryGetValue(name, out value))
             {
                 return value;
             }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// $ANTLR 3.4.1.9004 Parser\\Functional.g3 2013-02-09 00:24:57
+// $ANTLR 3.4.1.9004 Parsing\\Functional.g3 2013-02-09 17:13:21
 
 // The variable 'variable' is assigned but its value is never used.
 #pragma warning disable 219
@@ -28,7 +28,7 @@ using Antlr.Runtime.Misc;
 using Antlr.Runtime.Tree;
 using RewriteRuleITokenStream = Antlr.Runtime.Tree.RewriteRuleTokenStream;
 
-namespace Functional.Parser
+namespace Functional.Parsing
 {
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "3.4.1.9004")]
 [System.CLSCompliant(false)]
@@ -84,7 +84,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 	}
 
 	public override string[] TokenNames { get { return FunctionalParser.tokenNames; } }
-	public override string GrammarFileName { get { return "Parser\\Functional.g3"; } }
+	public override string GrammarFileName { get { return "Parsing\\Functional.g3"; } }
 
 
 	partial void OnCreated();
@@ -95,7 +95,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 	partial void EnterRule_prog();
 	partial void LeaveRule_prog();
 	// $ANTLR start "prog"
-	// Parser\\Functional.g3:22:1: public prog : ( stat )* ;
+	// Parsing\\Functional.g3:22:1: public prog : ( stat )* ;
 	[GrammarRule("prog")]
 	public AstParserRuleReturnScope<CommonTree, CommonToken> prog()
 	{
@@ -113,14 +113,14 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 		DebugLocation(22, 4);
 		try
 		{
-			// Parser\\Functional.g3:22:5: ( ( stat )* )
+			// Parsing\\Functional.g3:22:5: ( ( stat )* )
 			DebugEnterAlt(1);
-			// Parser\\Functional.g3:22:7: ( stat )*
+			// Parsing\\Functional.g3:22:7: ( stat )*
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
 			DebugLocation(22, 7);
-			// Parser\\Functional.g3:22:7: ( stat )*
+			// Parsing\\Functional.g3:22:7: ( stat )*
 			try { DebugEnterSubRule(1);
 			while (true)
 			{
@@ -139,7 +139,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// Parser\\Functional.g3:22:9: stat
+					// Parsing\\Functional.g3:22:9: stat
 					{
 					DebugLocation(22, 9);
 					PushFollow(Follow._stat_in_prog95);
@@ -193,7 +193,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 	partial void EnterRule_stat();
 	partial void LeaveRule_stat();
 	// $ANTLR start "stat"
-	// Parser\\Functional.g3:25:1: stat : ( expr NEWLINE -> expr | ID '=' expr NEWLINE -> ^( '=' ID expr ) | func NEWLINE -> func | NEWLINE ->);
+	// Parsing\\Functional.g3:25:1: stat : ( expr NEWLINE -> expr | ID '=' expr NEWLINE -> ^( '=' ID expr ) | func NEWLINE -> func | NEWLINE ->);
 	[GrammarRule("stat")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> stat()
 	{
@@ -230,7 +230,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 		DebugLocation(25, 4);
 		try
 		{
-			// Parser\\Functional.g3:25:5: ( expr NEWLINE -> expr | ID '=' expr NEWLINE -> ^( '=' ID expr ) | func NEWLINE -> func | NEWLINE ->)
+			// Parsing\\Functional.g3:25:5: ( expr NEWLINE -> expr | ID '=' expr NEWLINE -> ^( '=' ID expr ) | func NEWLINE -> func | NEWLINE ->)
 			int alt2=4;
 			try { DebugEnterDecision(2, false);
 			switch (input.LA(1))
@@ -377,7 +377,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// Parser\\Functional.g3:25:9: expr NEWLINE
+				// Parsing\\Functional.g3:25:9: expr NEWLINE
 				{
 				DebugLocation(25, 9);
 				PushFollow(Follow._expr_in_stat112);
@@ -417,7 +417,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// Parser\\Functional.g3:26:9: ID '=' expr NEWLINE
+				// Parsing\\Functional.g3:26:9: ID '=' expr NEWLINE
 				{
 				DebugLocation(26, 9);
 				ID4=(CommonToken)Match(input,ID,Follow._ID_in_stat147);  
@@ -454,7 +454,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 				// 26:41: -> ^( '=' ID expr )
 				{
 					DebugLocation(26, 44);
-					// Parser\\Functional.g3:26:44: ^( '=' ID expr )
+					// Parsing\\Functional.g3:26:44: ^( '=' ID expr )
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
 					DebugLocation(26, 46);
@@ -477,7 +477,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// Parser\\Functional.g3:27:9: func NEWLINE
+				// Parsing\\Functional.g3:27:9: func NEWLINE
 				{
 				DebugLocation(27, 9);
 				PushFollow(Follow._func_in_stat185);
@@ -517,7 +517,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// Parser\\Functional.g3:28:9: NEWLINE
+				// Parsing\\Functional.g3:28:9: NEWLINE
 				{
 				DebugLocation(28, 9);
 				NEWLINE10=(CommonToken)Match(input,NEWLINE,Follow._NEWLINE_in_stat220);  
@@ -579,7 +579,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 	partial void EnterRule_func();
 	partial void LeaveRule_func();
 	// $ANTLR start "func"
-	// Parser\\Functional.g3:31:1: func : ID '(' formalPar ')' '=' expr -> ^( FUNC ID formalPar expr ) ;
+	// Parsing\\Functional.g3:31:1: func : ID '(' formalPar ')' '=' expr -> ^( FUNC ID formalPar expr ) ;
 	[GrammarRule("func")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> func()
 	{
@@ -612,9 +612,9 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 		DebugLocation(31, 4);
 		try
 		{
-			// Parser\\Functional.g3:31:5: ( ID '(' formalPar ')' '=' expr -> ^( FUNC ID formalPar expr ) )
+			// Parsing\\Functional.g3:31:5: ( ID '(' formalPar ')' '=' expr -> ^( FUNC ID formalPar expr ) )
 			DebugEnterAlt(1);
-			// Parser\\Functional.g3:31:9: ID '(' formalPar ')' '=' expr
+			// Parsing\\Functional.g3:31:9: ID '(' formalPar ')' '=' expr
 			{
 			DebugLocation(31, 9);
 			ID11=(CommonToken)Match(input,ID,Follow._ID_in_func261);  
@@ -661,7 +661,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 			// 31:41: -> ^( FUNC ID formalPar expr )
 			{
 				DebugLocation(31, 44);
-				// Parser\\Functional.g3:31:44: ^( FUNC ID formalPar expr )
+				// Parsing\\Functional.g3:31:44: ^( FUNC ID formalPar expr )
 				{
 				CommonTree root_1 = (CommonTree)adaptor.Nil();
 				DebugLocation(31, 46);
@@ -716,7 +716,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 	partial void EnterRule_formalPar();
 	partial void LeaveRule_formalPar();
 	// $ANTLR start "formalPar"
-	// Parser\\Functional.g3:37:1: formalPar : ( ID | INT );
+	// Parsing\\Functional.g3:37:1: formalPar : ( ID | INT );
 	[GrammarRule("formalPar")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> formalPar()
 	{
@@ -735,9 +735,9 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 		DebugLocation(37, 1);
 		try
 		{
-			// Parser\\Functional.g3:38:5: ( ID | INT )
+			// Parsing\\Functional.g3:38:5: ( ID | INT )
 			DebugEnterAlt(1);
-			// Parser\\Functional.g3:
+			// Parsing\\Functional.g3:
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
@@ -789,7 +789,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 	partial void EnterRule_expr();
 	partial void LeaveRule_expr();
 	// $ANTLR start "expr"
-	// Parser\\Functional.g3:45:1: expr : multExpr ( ( '+' ^| '-' ^) multExpr )* ;
+	// Parsing\\Functional.g3:45:1: expr : multExpr ( ( '+' ^| '-' ^) multExpr )* ;
 	[GrammarRule("expr")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> expr()
 	{
@@ -812,9 +812,9 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 		DebugLocation(45, 4);
 		try
 		{
-			// Parser\\Functional.g3:45:5: ( multExpr ( ( '+' ^| '-' ^) multExpr )* )
+			// Parsing\\Functional.g3:45:5: ( multExpr ( ( '+' ^| '-' ^) multExpr )* )
 			DebugEnterAlt(1);
-			// Parser\\Functional.g3:45:9: multExpr ( ( '+' ^| '-' ^) multExpr )*
+			// Parsing\\Functional.g3:45:9: multExpr ( ( '+' ^| '-' ^) multExpr )*
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
@@ -825,7 +825,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 
 			adaptor.AddChild(root_0, multExpr18.Tree);
 			DebugLocation(45, 18);
-			// Parser\\Functional.g3:45:18: ( ( '+' ^| '-' ^) multExpr )*
+			// Parsing\\Functional.g3:45:18: ( ( '+' ^| '-' ^) multExpr )*
 			try { DebugEnterSubRule(4);
 			while (true)
 			{
@@ -844,10 +844,10 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// Parser\\Functional.g3:45:19: ( '+' ^| '-' ^) multExpr
+					// Parsing\\Functional.g3:45:19: ( '+' ^| '-' ^) multExpr
 					{
 					DebugLocation(45, 19);
-					// Parser\\Functional.g3:45:19: ( '+' ^| '-' ^)
+					// Parsing\\Functional.g3:45:19: ( '+' ^| '-' ^)
 					int alt3=2;
 					try { DebugEnterSubRule(3);
 					try { DebugEnterDecision(3, false);
@@ -872,7 +872,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 					{
 					case 1:
 						DebugEnterAlt(1);
-						// Parser\\Functional.g3:45:20: '+' ^
+						// Parsing\\Functional.g3:45:20: '+' ^
 						{
 						DebugLocation(45, 23);
 						char_literal19=(CommonToken)Match(input,14,Follow._14_in_expr334); 
@@ -883,7 +883,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 						break;
 					case 2:
 						DebugEnterAlt(2);
-						// Parser\\Functional.g3:45:25: '-' ^
+						// Parsing\\Functional.g3:45:25: '-' ^
 						{
 						DebugLocation(45, 28);
 						char_literal20=(CommonToken)Match(input,15,Follow._15_in_expr337); 
@@ -948,7 +948,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 	partial void EnterRule_multExpr();
 	partial void LeaveRule_multExpr();
 	// $ANTLR start "multExpr"
-	// Parser\\Functional.g3:48:1: multExpr : atom ( ( '*' | '/' | '%' ) ^ atom )* ;
+	// Parsing\\Functional.g3:48:1: multExpr : atom ( ( '*' | '/' | '%' ) ^ atom )* ;
 	[GrammarRule("multExpr")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> multExpr()
 	{
@@ -969,9 +969,9 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 		DebugLocation(48, 4);
 		try
 		{
-			// Parser\\Functional.g3:49:5: ( atom ( ( '*' | '/' | '%' ) ^ atom )* )
+			// Parsing\\Functional.g3:49:5: ( atom ( ( '*' | '/' | '%' ) ^ atom )* )
 			DebugEnterAlt(1);
-			// Parser\\Functional.g3:49:9: atom ( ( '*' | '/' | '%' ) ^ atom )*
+			// Parsing\\Functional.g3:49:9: atom ( ( '*' | '/' | '%' ) ^ atom )*
 			{
 			root_0 = (CommonTree)adaptor.Nil();
 
@@ -982,7 +982,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 
 			adaptor.AddChild(root_0, atom22.Tree);
 			DebugLocation(49, 14);
-			// Parser\\Functional.g3:49:14: ( ( '*' | '/' | '%' ) ^ atom )*
+			// Parsing\\Functional.g3:49:14: ( ( '*' | '/' | '%' ) ^ atom )*
 			try { DebugEnterSubRule(5);
 			while (true)
 			{
@@ -1001,7 +1001,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 				{
 				case 1:
 					DebugEnterAlt(1);
-					// Parser\\Functional.g3:49:15: ( '*' | '/' | '%' ) ^ atom
+					// Parsing\\Functional.g3:49:15: ( '*' | '/' | '%' ) ^ atom
 					{
 					DebugLocation(49, 28);
 
@@ -1072,7 +1072,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 	partial void EnterRule_atom();
 	partial void LeaveRule_atom();
 	// $ANTLR start "atom"
-	// Parser\\Functional.g3:52:1: atom : ( INT | ID | '(' expr ')' -> expr | ID '(' expr ')' -> ^( CALL ID expr ) );
+	// Parsing\\Functional.g3:52:1: atom : ( INT | ID | '(' expr ')' -> expr | ID '(' expr ')' -> ^( CALL ID expr ) );
 	[GrammarRule("atom")]
 	private AstParserRuleReturnScope<CommonTree, CommonToken> atom()
 	{
@@ -1109,7 +1109,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 		DebugLocation(52, 4);
 		try
 		{
-			// Parser\\Functional.g3:52:5: ( INT | ID | '(' expr ')' -> expr | ID '(' expr ')' -> ^( CALL ID expr ) )
+			// Parsing\\Functional.g3:52:5: ( INT | ID | '(' expr ')' -> expr | ID '(' expr ')' -> ^( CALL ID expr ) )
 			int alt6=4;
 			try { DebugEnterDecision(6, false);
 			switch (input.LA(1))
@@ -1157,7 +1157,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 			{
 			case 1:
 				DebugEnterAlt(1);
-				// Parser\\Functional.g3:52:9: INT
+				// Parsing\\Functional.g3:52:9: INT
 				{
 				root_0 = (CommonTree)adaptor.Nil();
 
@@ -1170,7 +1170,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 				break;
 			case 2:
 				DebugEnterAlt(2);
-				// Parser\\Functional.g3:53:9: ID
+				// Parsing\\Functional.g3:53:9: ID
 				{
 				root_0 = (CommonTree)adaptor.Nil();
 
@@ -1183,7 +1183,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 				break;
 			case 3:
 				DebugEnterAlt(3);
-				// Parser\\Functional.g3:54:9: '(' expr ')'
+				// Parsing\\Functional.g3:54:9: '(' expr ')'
 				{
 				DebugLocation(54, 9);
 				char_literal27=(CommonToken)Match(input,11,Follow._11_in_atom410);  
@@ -1227,7 +1227,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 				break;
 			case 4:
 				DebugEnterAlt(4);
-				// Parser\\Functional.g3:55:9: ID '(' expr ')'
+				// Parsing\\Functional.g3:55:9: ID '(' expr ')'
 				{
 				DebugLocation(55, 9);
 				ID30=(CommonToken)Match(input,ID,Follow._ID_in_atom431);  
@@ -1264,7 +1264,7 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 				// 55:25: -> ^( CALL ID expr )
 				{
 					DebugLocation(55, 28);
-					// Parser\\Functional.g3:55:28: ^( CALL ID expr )
+					// Parsing\\Functional.g3:55:28: ^( CALL ID expr )
 					{
 					CommonTree root_1 = (CommonTree)adaptor.Nil();
 					DebugLocation(55, 30);
@@ -1354,4 +1354,4 @@ public partial class FunctionalParser : Antlr.Runtime.Parser
 	#endregion Follow sets
 }
 
-} // namespace Functional.Parser
+} // namespace Functional.Parsing

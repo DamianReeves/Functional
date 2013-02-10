@@ -1,4 +1,4 @@
-﻿namespace Functional.Parser 
+﻿namespace Functional.Parsing
 {
     using System.Collections.Generic;
 

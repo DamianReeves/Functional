@@ -1,4 +1,4 @@
-﻿namespace Functional.Parser 
+﻿namespace Functional.Parsing
 {
     public partial class FunctionalLexer 
     {

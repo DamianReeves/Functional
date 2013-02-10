@@ -13,8 +13,8 @@ tokens {
     CALL;
 }
 
-@lexer::namespace{Functional.Parser}
-@parser::namespace{Functional.Parser}
+@lexer::namespace{Functional.Parsing}
+@parser::namespace{Functional.Parsing}
 
 
 // START:stat

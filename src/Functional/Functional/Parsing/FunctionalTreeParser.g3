@@ -6,7 +6,7 @@ options {
     ASTLabelType=CommonTree;
 }
 
-@namespace{Functional.Parser}
+@namespace{Functional.Parsing}
 @header {
 using System;
 using System.Numerics;
@@ -20,7 +20,7 @@ prog:   stat*
 stat:   expr                       { string result = $expr.value.ToString();
                                      Console.WriteLine($expr.value + " (about " + result[0] + "*10^" + (result.Length-1) + ")");
                                    }
-    |   ^('=' ID expr)             { this.globalMemory[$ID.text] = $expr.value; }
+    |   ^('=' ID expr)             { globalMemory[$ID.text] = $expr.value; }
     |   ^(FUNC .+)	               // ignore FUNCs - we added them to functionDefinitions already in parser.
     ;
 

@@ -45,6 +45,7 @@
       <HintPath>..\packages\IronPython.2.7.3\lib\Net40\Microsoft.Scripting.Metadata.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
@@ -57,24 +58,32 @@
     <Compile Include="Generated\FunctionalLexer.cs" />
     <Compile Include="Generated\FunctionalParser.cs" />
     <Compile Include="Generated\FunctionalTreeParser.cs" />
-    <Compile Include="Parser\Functional.g3.lexer.cs">
+    <Compile Include="Hosting\FunctionalCommandLine.cs" />
+    <Compile Include="Hosting\FunctionalConsoleHost.cs" />
+    <Compile Include="Parsing\Functional.g3.lexer.cs">
       <DependentUpon>Functional.g3</DependentUpon>
     </Compile>
-    <Compile Include="Parser\Functional.g3.parser.cs">
+    <Compile Include="Parsing\Functional.g3.parser.cs">
       <DependentUpon>Functional.g3</DependentUpon>
     </Compile>
-    <Compile Include="Parser\FunctionalTreeParser.g3.cs">
+    <Compile Include="Parsing\FunctionalTreeParser.g3.cs">
       <DependentUpon>FunctionalTreeParser.g3</DependentUpon>
     </Compile>
+    <Compile Include="Parsing\Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Runtime\DynamicObjectHelpers.cs" />
+    <Compile Include="Runtime\FunctionalLanguageService.cs" />
     <Compile Include="Runtime\FunctionalContext.cs" />
+    <Compile Include="Runtime\FunctionalException.cs" />
+    <Compile Include="Runtime\FunctionalScriptCode.cs" />
+    <Compile Include="Runtime\ParseResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Antlr3 Include="Parser\Functional.g3">
+    <Antlr3 Include="Parsing\Functional.g3">
       <Generator>MSBuild:Compile</Generator>
     </Antlr3>
-    <Antlr3 Include="Parser\FunctionalTreeParser.g3">
+    <Antlr3 Include="Parsing\FunctionalTreeParser.g3">
       <Generator>MSBuild:Compile</Generator>
     </Antlr3>
   </ItemGroup>

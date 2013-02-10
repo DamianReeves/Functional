@@ -1,37 +1,34 @@
-﻿namespace Functional.Console 
+﻿namespace Functional.Hosting 
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
 
     using Functional.Runtime;
 
     using Microsoft.Scripting.Hosting.Shell;
 
-    internal class FunctionalConsoleHost : ConsoleHost
-    {
+    public class FunctionalConsoleHost : ConsoleHost
+    {        
         protected override Type Provider
         {
             get { return typeof(FunctionalContext); }
         }
 
-        public static int Main(string[] args) 
+        public static int Execute(string[] args) 
         {
             return new FunctionalConsoleHost().Run(args);
+        }
+
+        protected override CommandLine CreateCommandLine() 
+        {
+            return new FunctionalCommandLine();
         }
 
         protected override ConsoleOptions ParseOptions(string[] args, Microsoft.Scripting.Hosting.ScriptRuntimeSetup runtimeSetup, Microsoft.Scripting.Hosting.LanguageSetup languageSetup) 
         {
             var options = base.ParseOptions(args, runtimeSetup, languageSetup);
             options.TabCompletion = true;
+            options.ColorfulConsole = true;
             return options;
         }
-
-        protected override IConsole CreateConsole(Microsoft.Scripting.Hosting.ScriptEngine engine, CommandLine commandLine, ConsoleOptions options) 
-        {
-            var console = base.CreateConsole(engine, commandLine, options);
-            return console;
-        }        
     }
 }
